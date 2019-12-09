@@ -11,6 +11,7 @@
 	<groupId>fereusz</groupId>
 	<artifactId>InformationFlow</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<packaging>war</packaging>
 	<name>InformationFlow</name>
 	<description>Demo project for Spring Boot</description>
@@ -38,6 +39,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
