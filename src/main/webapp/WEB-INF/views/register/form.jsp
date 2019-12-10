@@ -25,7 +25,7 @@
 </head>
 <body class="has-navbar-fixed-top">
 
-<jsp:include page="../header.footer/header.jsp"/>
+<jsp:include page="../media/header.jsp"/>
 
 <section class="section">
     <div class="container">
@@ -37,7 +37,6 @@
                 Please register yout account
             </h2>
         </div>
-    </div>
 </section>
 <section class="section">
     <div class="container">
@@ -102,6 +101,6 @@
         </div>
     </div>
 </section>
-<jsp:include page="../header.footer/footer.jsp"/>
+<jsp:include page="../media/footer.jsp"/>
 </body>
 </html>

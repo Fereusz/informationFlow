@@ -24,7 +24,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body class="has-navbar-fixed-top">
-<jsp:include page="header.footer/header.jsp"/>
+<jsp:include page="media/header.jsp"/>
 <section class="hero is-bold is-medium">
     <div class="container">
         <div class="hero-body">
@@ -32,13 +32,13 @@
                 Witaj na stronie Marcina
             </h1>
             <h2 class="subtitle">
-                Witaj w projekcie <strong>Projet Marcin</strong>.
+                Witaj w projekcie <strong>Information Flow</strong>.
                 <br/>Przykladowy tekst
             </h2>
 
         </div>
     </div>
 </section>
-<jsp:include page="header.footer/footer.jsp"/>
+<jsp:include page="media/footer.jsp"/>
 </body>
 </html>
