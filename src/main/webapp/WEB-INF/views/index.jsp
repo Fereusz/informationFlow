@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: marcin
@@ -23,75 +24,21 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body class="has-navbar-fixed-top">
-<header>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/">
-                        Strona główna
-                    </a>
-                    <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Więcej
-                        </a>
-
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Link do niczego
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar=end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" href="/register">
-                                <strong>Zarejestruj</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Zaloguj</strong>
-                            </a>
-                            <a class="button is-primary" href="/account">
-                                <strong>Twoje konto</strong>
-                            </a>
-                            <form method="post" action="/logout">
-                                <button class="button is-link" type="submit">Wyloguj</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+<jsp:include page="header.footer/header.jsp"/>
 <section class="hero is-bold is-medium">
     <div class="container">
         <div class="hero-body">
             <h1 class="title">
-                Spring Transitions
+                Witaj na stronie Marcina
             </h1>
             <h2 class="subtitle">
-                Witaj w projekcie <strong>Spring Transitions</strong>.
-                <br/>Znajdziesz tutaj mnóstwo przykładów w jaki sposób mogą być wdrażane kolejne
-                rozwinięcia aplikacji opartej na
-                frameworku Spring i Spring Boot
+                Witaj w projekcie <strong>Projet Marcin</strong>.
+                <br/>Przykladowy tekst
             </h2>
 
         </div>
     </div>
 </section>
-<footer class="footer">
-    <div class="container">
-        <div class="content has-text-centered">
-            <p><strong>Information Flow</strong> by Marcin Fereniec &copy; Prawa licencyjne na
-                zasadzie praw ogólnych</p>
-        </div>
-    </div>
-</footer>
+<jsp:include page="header.footer/footer.jsp"/>
 </body>
 </html>
