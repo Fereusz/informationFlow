@@ -1,7 +1,6 @@
 package fereusz.InformationFlow.domain.entities;
 
 
-import ch.qos.logback.core.net.server.Client;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,10 +34,13 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany
-    private List<Fund> fundList=new ArrayList<>();
+    private List<Fund> funds=new ArrayList<>();
 
     @OneToMany
-    private List<FundManagers> fundManagers = new ArrayList<>();
+    private List<FundManager> fundManagers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    private List<Feedback> feedbacks = new ArrayList<>();
 
 
 
