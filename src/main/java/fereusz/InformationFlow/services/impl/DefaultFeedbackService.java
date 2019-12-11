@@ -5,8 +5,10 @@ import fereusz.InformationFlow.domain.entities.User;
 import fereusz.InformationFlow.domain.repositories.FeedbackRepository;
 import fereusz.InformationFlow.domain.repositories.UserRepository;
 import fereusz.InformationFlow.dtos.FeedbackDTO;
+import fereusz.InformationFlow.dtos.FeedbackEditDTO;
 import fereusz.InformationFlow.services.FeedbackService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -46,10 +48,21 @@ public class DefaultFeedbackService implements FeedbackService {
     }
 
     @Override
-    public Feedback prepareUpdate(Long id) {
+    public FeedbackEditDTO prepareUpdate(Long id) {
         Optional<Feedback> feedback = feedbackRepository.findById(id);
-        return feedback.get();
+        ModelMapper mapper = new ModelMapper();
+        FeedbackEditDTO editFeedback = mapper.map(feedback, FeedbackEditDTO.class);
+        return editFeedback;
     }
+
+    @Override
+    public void save(FeedbackEditDTO editDTO) {
+        ModelMapper mapper = new ModelMapper();
+        Feedback feedback = mapper.map(editDTO, Feedback.class);
+        feedbackRepository.save(feedback);
+
+    }
+
 
 
 //    @Override

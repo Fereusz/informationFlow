@@ -44,16 +44,13 @@ public class FeedbackController {
 
     @GetMapping
     public String prepareAddFeedback(Model model) {
-
         model.addAttribute("feedbackDTO", new FeedbackDTO());
         return "feedback/feedback-add";
-
     }
 
     @PostMapping
     public String processAddFeedback(@ModelAttribute("feedbackDTO")
                                      @Valid FeedbackDTO feedbackDTO, BindingResult result) {
-
         if (result.hasErrors()) {
             return "addfeedback/feedback-add";
         }

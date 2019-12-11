@@ -33,10 +33,10 @@
 
 
             <td>
-                <c:url value="/authors/delete" var="deleteURL">
+                <c:url value="/feedback" var="deleteURL">
                     <c:param name="id" value="${author.id}"/>
                 </c:url>
-                <c:url value="/authors/update" var="updateURL">
+                <c:url value="/feedback/update" var="updateURL">
                     <c:param name="id" value="${author.id}"/>
                 </c:url>
                 <a href="${deleteURL}">Usuń</a>
