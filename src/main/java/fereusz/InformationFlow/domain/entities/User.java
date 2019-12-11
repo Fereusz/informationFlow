@@ -33,10 +33,10 @@ public class User {
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Fund> funds=new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<FundManager> fundManagers = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
