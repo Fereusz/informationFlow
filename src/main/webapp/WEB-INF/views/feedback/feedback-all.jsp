@@ -24,21 +24,22 @@
         <th>Fund Manager</th>
 
     </tr>
-    <c:forEach items="${feedback}" var="feedback" varStatus="stat">
+    <c:forEach items="${feedbacks}" var="feedback" varStatus="stat">
         <tr>
             <td>${stat.count}.</td>
             <td>${feedback.content}</td>
             <td>${feedback.localDateTime}</td>
             <td>${feedback.fundManager}</td>
 
-
             <td>
-                <c:url value="/feedback" var="deleteURL">
-                    <c:param name="id" value="${author.id}"/>
+                <c:url value="/feedback/delete/${feedback.id}" var="deleteURL">
+                    <c:param name="id" value="${feedback.id}"/>
                 </c:url>
-                <c:url value="/feedback/update" var="updateURL">
-                    <c:param name="id" value="${author.id}"/>
+
+                <c:url value="/feedback/update/${feedback.id}" var="updateURL">
+                    <c:param name="id" value="${feedback.id}"/>
                 </c:url>
+
                 <a href="${deleteURL}">Usuń</a>
                 <a href="${updateURL}">Edytuj</a>
             </td>

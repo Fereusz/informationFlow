@@ -63,6 +63,11 @@ public class DefaultFeedbackService implements FeedbackService {
 
     }
 
+    @Override
+    public void delete(Long id) {
+        feedbackRepository.deleteById(id);
+
+    }
 
 
 //    @Override

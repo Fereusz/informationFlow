@@ -15,7 +15,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/feedback")
 public class FeedbackBrowseController {
 
     private final FundManagerRepository fundManagerRepository;
@@ -38,55 +37,37 @@ public class FeedbackBrowseController {
         return fundRepository.findAll();
     }
 
-    @GetMapping
+
+    @GetMapping("/feedback")
     public String prepareAllFeedbacks(Model model) {
-        model.addAttribute("feedback", feedbackService.findAll());
+        model.addAttribute("feedbacks", feedbackService.findAll());
         return "feedback/feedback-all";
     }
 
-    @GetMapping("/update")
-    public String prepareUpdateFeedback (Model model, Long id) {
-        model.addAttribute("feedback",feedbackService.prepareUpdate(id));
+    @GetMapping("/feedback/update/{id}")
+    public String prepareUpdateFeedback(@PathVariable Long id, Model model) {
+        model.addAttribute("feedbacks", feedbackService.prepareUpdate(id));
         return "feedback/feedback-update";
 
     }
-    @PostMapping("/update")
-    public String executeUpdateFeedback (@ModelAttribute("feedback")
-                                             @Valid FeedbackEditDTO feedbackEditDTO, BindingResult result) {
-        if(result.hasErrors()) {
+
+    @PostMapping("/feedback/update/{id}")
+    public String executeUpdateFeedback(@PathVariable Long id, @ModelAttribute("feedback")
+    @Valid FeedbackEditDTO feedbackEditDTO, BindingResult result) {
+        if (result.hasErrors()) {
             return "feedback/feedback-update";
         }
+        feedbackService.save(feedbackEditDTO);
+        return "redirect:/feedback";
+    }
 
+    @GetMapping("/feedback/delete/{id}")
+    public String deleteFeedback (@PathVariable Long id) {
+        feedbackService.delete(id);
         return "redirect:/feedback";
     }
 
 
-//    @PostMapping("/edit/{id}")
-//    public String processEditMovie(@ModelAttribute("movie") @Valid EditMovieDTO movie, BindingResult result,
-//                                   @PathVariable Long id) {
-//        if (result.hasErrors()) {
-//            return "admin/movies/edit";
-//        }
-//        if (movie != null) {
-//            adminService.save(movie);
-//        }
-//        return "redirect:/admin/movies/all";
-//    }
-//
-//    @GetMapping("/update")
-//    public String prepareUpdateCategory (Model model, Long id) {
-//        Optional<Category> result = categoryRepository.findById(id);
-//        Category category = result.get();
-//        model.addAttribute("category", category);
-//        return "update-category";
-//
-//    }
-//    @PostMapping("/update")
-//    public String executeUpdateCategory(@ModelAttribute @Valid Category category, BindingResult result) {
-//        if (result.hasErrors()){
-//            return "/home";
-//        }
-//        categoryRepository.save(category);
-//        return "redirect:/home";
-//    }
+
+
 }

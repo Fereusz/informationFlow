@@ -12,7 +12,10 @@ public interface FeedbackService {
     List<Feedback> findAll();
 
     FeedbackEditDTO prepareUpdate (Long id);
+
     void save (FeedbackEditDTO editDTO);
+
+    void delete (Long id);
 
 
 
