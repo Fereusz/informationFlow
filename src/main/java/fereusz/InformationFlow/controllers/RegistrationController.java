@@ -22,7 +22,6 @@ public class RegistrationController {
         this.registrationService = registrationService;
     }
 
-
     @GetMapping
     public String getRegistrationPage(Model model) {
         model.addAttribute("registrationData", new RegistrationDataDTO());
