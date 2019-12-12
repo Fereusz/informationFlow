@@ -29,7 +29,8 @@
             <td>${stat.count}.</td>
             <td>${feedback.content}</td>
             <td>${feedback.localDateTime}</td>
-            <td>${feedback.fundManager}</td>
+            <td>${feedback.fundManager.fullName}</td>
+
 
             <td>
                 <c:url value="/feedback/delete/${feedback.id}" var="deleteURL">

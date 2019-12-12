@@ -32,7 +32,7 @@ html>
     <div class="container">
         <%--        <div class="hero-body">--%>
         <h1 class="title">
-            Fund Add
+            Please add new Portfolio Manager
         </h1>
         <h2 class="subtitle">
             Please add specific client
@@ -43,7 +43,7 @@ html>
 <section class="section">
     <div class="container">
         <div class="columns">
-            <div class="column"></div>
+
             <div class="column">
                 <form:form method="post" modelAttribute="fundManagerDTO">
                     <div class="field">
@@ -93,6 +93,7 @@ html>
                     <sec:csrfInput/>
                 </form:form>
             </div>
+            <div class="column"></div>
             <div class="column">
             </div>
         </div>

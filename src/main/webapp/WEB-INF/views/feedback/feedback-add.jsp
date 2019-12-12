@@ -34,7 +34,7 @@ html>
     <div class="container">
         <%--        <div class="hero-body">--%>
         <h1 class="title">
-            Fund Add
+            Feedback Add
         </h1>
         <h2 class="subtitle">
             Please add feedback from client
@@ -45,49 +45,52 @@ html>
 <section class="section">
     <div class="container">
         <div class="columns">
-            <div class="column"></div>
             <div class="column">
                 <form:form method="post" modelAttribute="feedbackDTO">
-                    <div class="field">
-                        <form:label path="content" cssClass="label">Write feedback</form:label>
-                        <div class="control has-icons-left">
-                            <form:textarea path="content" cssClass="input" required="true" style="height:100px;width:100"></form:textarea>
-                            <span class="icon is-small is-left"></span>
-                            <p class="help"></p>
-                        </div>
+                <div class="field">
+                    <form:label path="content" cssClass="label">Write feedback</form:label>
+                    <div class="control has-icons-left">
+                        <form:textarea path="content" cssClass="input" required="true"
+                                       style="height:100px;width:100"></form:textarea>
+                        <span class="icon is-small is-left"></span>
+                        <p class="help"></p>
                     </div>
-                    <div class="field">
-                        <form:label path="fundId" cssClass="label">Select fund</form:label>
-                        <div class="control has-icons-left">
-                            <form:select path="fundId" items="${funds}" itemLabel="name" itemValue="id" cssClass="input" required="true"/>
-                            <span class="icon is-small is-left"></span>
-                            <p class="help"></p>
-                        </div>
-                        <div class="field is-grouped">
-                    <div class="field">
-                        <form:label path="fundManagerId" cssClass="label">Select PM</form:label>
-                        <div class="control has-icons-left">
-                            <form:select path="fundManagerId" items="${managers}" itemLabel="fullName"  itemValue="id" cssClass="input" required="true"/>
-                            <span class="icon is-small is-left"></span>
-                            <p class="help"></p>
-                        </div>
+                </div>
+                <div class="field">
+                    <form:label path="fundId" cssClass="label">Select fund</form:label>
+                    <div class="control has-icons-left">
+                        <form:select path="fundId" items="${funds}" itemLabel="name" itemValue="id" cssClass="input"
+                                     required="true"/>
+                        <span class="icon is-small is-left"></span>
+                        <p class="help"></p>
+                    </div>
                     <div class="field is-grouped">
-                        <div class="control">
-                            <button class="button is-success is-link" type="submit">Add Feedback
-                            </button>
+                        <div class="field">
+                            <form:label path="fundManagerId" cssClass="label">Select PM</form:label>
+                            <div class="control has-icons-left">
+                                <form:select path="fundManagerId" items="${managers}" itemLabel="fullName"
+                                             itemValue="id" cssClass="input" required="true"/>
+                                <span class="icon is-small is-left"></span>
+                                <p class="help"></p>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button class="button is-success is-link" type="submit">Add Feedback
+                                    </button>
+                                </div>
+                                <div class="control">
+                                    <button class="button is-text" type="reset">Discard</button>
+                                </div>
+                            </div>
+                            <form:errors path="*"/>
+                            <sec:csrfInput/>
+                            </form:form>
                         </div>
-                        <div class="control">
-                            <button class="button is-text" type="reset">Discard</button>
+                        <div class="column"></div>
+                        <div class="column">
                         </div>
                     </div>
-                    <form:errors path="*"/>
-                    <sec:csrfInput/>
-                </form:form>
-            </div>
-            <div class="column">
-            </div>
-        </div>
-    </div>
+                </div>
 </section>
 <jsp:include page="../media/footer.jsp"/>
 </body>

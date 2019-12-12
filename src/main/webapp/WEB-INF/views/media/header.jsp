@@ -47,6 +47,13 @@
 
                             <sec:authorize access="isAuthenticated()">
 
+                                <a class="button is-primary" href="/funds">
+                                    <strong>Funds list</strong>
+                                </a>
+
+                                <a class="button is-primary" href="/managers">
+                                    <strong>PM list</strong>
+                                </a>
                                 <a class="button is-primary" href="/feedback">
                                     <strong>Feedback list</strong>
                                 </a>
@@ -59,8 +66,8 @@
                                 <a class="button is-primary" href="/addfund">
                                     <strong>Add Fund</strong>
                                 </a>
-                                <a class="button is-primary" href="/user">
-                                    <strong>Account</strong>
+<%--                                <a class="button is-primary" href="/user">--%>
+<%--                                    <strong>Account</strong>--%>
                                 </a>
                                 <form method="post" action="/logout">
                                     <button class="button is-link" type="submit">Wyloguj</button>
